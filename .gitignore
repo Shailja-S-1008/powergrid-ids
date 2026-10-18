@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Pipeline outputs
+outputs/
+results_dir/
+
+# Datasets (downloaded separately - see data/README.md)
+data/**
+!data/README.md
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

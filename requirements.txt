@@ -1,0 +1,12 @@
+# Core (all algorithms)
+numpy==2.3.5
+pandas==2.3.3
+scipy==1.16.3
+scikit_learn==1.7.2
+scikit_learn_extra==0.3.0   # PAM / CLARA (KMedoids)
+pyod==2.0.5                 # GMM / HBOS detectors
+psutil==7.0.0               # resource profiling
+
+# Deep-learning algorithms only
+# torch==2.7.1              # CNN, NN, RNN, RNN_LSTM, svdd  (use the build matching your CUDA, e.g. 2.7.1+cu118)
+# tensorflow==2.20.0        # ae, vae
