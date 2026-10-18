@@ -56,9 +56,8 @@ import logging
 logging.basicConfig(filename =uh.LOG_FILE,level = logging.INFO)
 logger = logging.getLogger(ALGO_NAME)
 def log_run_status(ds, run_key, success=True, e=None):
-    # 1. Define the icons
-    # ✅ = U+2705, ❌ = U+274C
-    status_icon = "✅ Success" if success else "❌ Failed "
+
+    status_icon = "Success" if success else "Failed "
 
     # 2. Extract variables (as per your request)
     dataset = ds['dataset']
@@ -152,12 +151,12 @@ def fit_svdd(X, random_state=42, latent_dim=16, epochs=50, lr=1e-3, batch_size=6
     model.center = center # Store center in the model for prediction
     model.device = device
 
-    # with torch.no_grad():
-    #     X_tensor = torch.tensor(X, dtype=torch.float32).to(model.device)
-    #     z = model(X_tensor)
-    #     train_scores = torch.sum((z - model.center)**2, dim=1).cpu().numpy()
+    with torch.no_grad():
+        X_tensor = torch.tensor(X, dtype=torch.float32).to(model.device)
+        z = model(X_tensor)
+        train_scores = torch.sum((z - model.center)**2, dim=1).cpu().numpy()
 
-    # model.threshold = np.percentile(train_scores, 95)
+    model.threshold = np.percentile(train_scores, 95)
     return model
 
 

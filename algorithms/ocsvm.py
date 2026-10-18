@@ -65,9 +65,8 @@ import logging
 logging.basicConfig(filename =uh.LOG_FILE,level = logging.INFO)
 logger = logging.getLogger(ALGO_NAME)
 def log_run_status(ds, run_key, success=True, e=None):
-    # 1. Define the icons
-    # ✅ = U+2705, ❌ = U+274C
-    status_icon = "✅ Success" if success else "❌ Failed "
+
+    status_icon = "Success" if success else "Failed "
 
     # 2. Extract variables (as per your request)
     dataset = ds['dataset']
@@ -94,7 +93,6 @@ def log_run_status(ds, run_key, success=True, e=None):
     else:
         # Use logger.error if it failed, so it highlights in log viewers
         logger.error(log_msg)
-
      
 # ==============================================================================
 # Core primitives (resource-capturing, unchanged OCSVM logic)

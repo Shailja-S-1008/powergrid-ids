@@ -1,37 +1,3 @@
-# import os
-# import sys
-# import time
-# import psutil
-# import argparse
-# import numpy as np
-# import pandas as pd
-# # Load SciPy before scikit-learn
-# from scipy.spatial import distance
-
-
-# from sklearn.cluster import OPTICS
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.model_selection import KFold, ParameterGrid
-# from sklearn.neighbors import NearestNeighbors
-# from sklearn.metrics import confusion_matrix, classification_report, f1_score
-# from scipy.optimize import linear_sum_assignment
-# from sklearn.metrics import pairwise_distances
-# from sklearn.metrics import (
-#     confusion_matrix, classification_report,
-#     precision_score, recall_score, f1_score,
-#     roc_auc_score, average_precision_score,
-#     balanced_accuracy_score, matthews_corrcoef
-# )
-# import warnings
-# warnings.filterwarnings("ignore", category=RuntimeWarning, message="divide by zero encountered")
-
-# # ---------- repo utilities ----------
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# import utility.resource_usage as ru
-# import utility.unsupervised_helper as uh
-# import utility.plot_helper as ph
-
-
 # ---------- Standard library ----------
 import os
 import sys
@@ -97,9 +63,8 @@ import logging
 logging.basicConfig(filename =uh.LOG_FILE,level = logging.INFO)
 logger = logging.getLogger(ALGO_NAME)
 def log_run_status(ds, run_key, success=True, e=None):
-    # 1. Define the icons
-    # ✅ = U+2705, ❌ = U+274C
-    status_icon = "✅ Success" if success else "❌ Failed "
+
+    status_icon = "Success" if success else "Failed "
 
     # 2. Extract variables (as per your request)
     dataset = ds['dataset']

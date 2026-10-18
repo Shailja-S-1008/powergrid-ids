@@ -64,9 +64,8 @@ logging.basicConfig(filename =uh.LOG_FILE,level = logging.INFO)
 logger = logging.getLogger(ALGO_NAME)
 
 def log_run_status(ds, run_key, success=True, e=None):
-    # 1. Define the icons
-    # ✅ = U+2705, ❌ = U+274C
-    status_icon = "✅ Success" if success else "❌ Failed "
+
+    status_icon = "Success" if success else " Failed "
 
     # 2. Extract variables (as per your request)
     dataset = ds['dataset']
@@ -394,17 +393,8 @@ if __name__ == "__main__":
     )
 
 
-    # output_csv_path = f'{uh.ROOT_OUTPUT_DIR}/aggregated_{ALGO_NAME}_results.csv'
-
-
-    # uh.append_results_to_csv(output_csv_path, results, {
-    #         'dataset': dataset, 'goid': goid, 'attack_type': attack_type
-    #     })
-
-
     long_csv_path = os.path.join(uh.PLOT_DATA_DIR, f"{ALGO_NAME}_metrics_long.csv")
-    # if os.path.exists(long_csv_path):
-    #     os.remove(long_csv_path)
+
 
     # metrics_long rows
     rows = uh.extract_plot_rows(results, ALGO_NAME, ds) + uh.extract_average_rows_over_runs(results, ALGO_NAME, ds)

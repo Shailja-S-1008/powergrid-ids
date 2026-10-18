@@ -24,9 +24,8 @@ ALGORITHMS_DIR = os.path.join(REPO_ROOT, "algorithms")
 #  CONFIGURATION
 # ===========================================================================
 
-# Dummy URL for the preprocessed dataset folder. Replace with the real download
-# link, then download and extract it into DATA_ROOT.
-DATA_URL = "https://example.com/REPLACE_WITH_DATASET_URL"
+# Dummy URL for the preprocessed dataset folder. 
+DATA_URL = ""
 
 # Root folder holding the preprocessed datasets (see find_dataset_paths below).
 DATA_ROOT = os.path.join(REPO_ROOT, "data", "preprocessed")

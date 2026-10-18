@@ -1,6 +1,6 @@
 # PowerGrid IDS — Anomaly-Detection Algorithm Suite
 
-A benchmark harness that runs a suite of (mostly unsupervised) anomaly-detection
+A benchmark harness that runs a suite of unsupervised anomaly-detection
 algorithms over many power-grid intrusion-detection datasets. Each algorithm
 trains and evaluates per dataset case and records its metrics and resource
 usage to a per-algorithm CSV.
@@ -17,7 +17,7 @@ usage to a per-algorithm CSV.
 │   │   spectral_clustering.py  kmeans.py  gmm.py  hbos.py   # clustering / density
 │   ├── pca.py  vae.py  ae.py                    # reconstruction
 │   ├── lof.py  If.py  ocsvm.py  svdd.py         # anomaly detection
-│   └── LR.py NB.py DT.py RF.py XGB.py NN.py KNN.py SVM.py RNN.py CNN.py RNN_LSTM.py  # supervised
+│   
 ├── utility/
 │   ├── unsupervised_helper.py  # data loading, feature selection, result CSV writers
 │   ├── resource_usage.py       # CPU / RAM / time profiler
@@ -42,7 +42,6 @@ Datasets are hosted separately. Download and extract them into
 `data/preprocessed/` (see [`data/README.md`](data/README.md)) and set the real
 link in `DATA_URL` (`pipeline/run_all.py`).
 
-> Current placeholder: `https://example.com/REPLACE_WITH_DATASET_URL`
 
 ## Run
 

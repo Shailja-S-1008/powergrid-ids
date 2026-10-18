@@ -1,24 +1,3 @@
-# import os
-# import sys
-# import argparse
-# import numpy as np
-# np.seterr(invalid='ignore', divide='ignore')
-# import pandas as pd
-# from sklearn_extra.cluster import KMedoids
-# from sklearn.metrics import pairwise_distances
-# from sklearn.metrics import (
-#     confusion_matrix, classification_report,
-#     precision_score, recall_score, f1_score,
-#     roc_auc_score, average_precision_score,
-#     balanced_accuracy_score, matthews_corrcoef
-# )
-
-# # ---------- repo utilities ----------
-# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# from  utility import resource_usage as ru
-# from  utility import unsupervised_helper as uh
-# from  utility import plot_helper as ph
-
 import os
 import sys
 import argparse
@@ -66,9 +45,8 @@ import logging
 logging.basicConfig(filename =uh.LOG_FILE,level = logging.INFO)
 logger = logging.getLogger(ALGO_NAME)
 def log_run_status(ds, run_key, success=True, e=None):
-    # 1. Define the icons
-    #  = U+2705,  = U+274C
-    status_icon = "✅ Success" if success else "❌ Failed "
+
+    status_icon = "Success" if success else "Failed "
 
     # 2. Extract variables (as per your request)
     dataset = ds['dataset']
